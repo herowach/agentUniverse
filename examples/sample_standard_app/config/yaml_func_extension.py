@@ -55,6 +55,7 @@ class YamlFuncExtension:
            str: The API key for the specified model if found; otherwise, an empty string.
        """
         if model_name == LLMModelEnum.QWEN.value:
+            print("DASHSCOPE_API_KEY>>>>>>>>>>", os.getenv("DASHSCOPE_API_KEY"))
             return os.getenv("DASHSCOPE_API_KEY")
         elif model_name == LLMModelEnum.DEEPSEEK.value:
             return os.getenv("DEEPSEEK_API_KEY")

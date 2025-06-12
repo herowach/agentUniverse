@@ -7,6 +7,7 @@
 # @FileName: product_application.py
 from agentuniverse.base.agentuniverse import AgentUniverse
 from agentuniverse_product.agentuniverse_product import AgentUniverseProduct
+import os
 
 
 class ProductApplication:
@@ -18,6 +19,8 @@ class ProductApplication:
 
     @classmethod
     def start(cls):
+        for key, value in os.environ.items():
+            print(f"{key}: {value}")
         AgentUniverse().start(core_mode=True)
         AgentUniverseProduct().start()
 
